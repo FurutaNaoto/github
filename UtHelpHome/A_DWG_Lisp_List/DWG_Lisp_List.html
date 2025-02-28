@@ -1,0 +1,242 @@
+<!DOCTYPE html><!---->
+<html lang="ja">
+<head><meta charset="UTF-8">
+<!-- 指定秒数ごとにページを自動更新する。開発終了後はコメントアウトする。 -->
+<!--<meta http-equiv="refresh" content="5">-->
+<!---->
+<!--おまじない-->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<!---->
+<!---->
+<script type="text/javascript">
+//<!--使用するファイルをロードするためのフォルダパスを作成する。-->
+var cssPath = decodeURI(window.location.href).split('UtHelpHome')[0] + 'UtHelpHome/css/';
+  //<!---->
+  //<!--リンクするcssファイル名をリスト化して指定-->
+  var Processlist = ['header_footer_set','mouse_stalker',
+  'scroll_bar','font_set','dt_dd_set',
+  'popup_img','inview_Slidefrom_set',
+  'hover_box-shadow' , 'printA',
+  ];
+  for(i=0;i<Processlist.length;i++){
+    var css = document.createElement('link');
+    css.type = 'text/css';
+    css.rel = 'stylesheet';
+    css.href = cssPath + Processlist[i] + '.css' ;
+    var head = document.getElementsByTagName('head')[0];
+    head.appendChild(css);
+  }
+  //<!---->
+  //<!--リンクするjsファイル名をリスト化して指定-->
+  var Processlist = ['header_footer_set','mouse_stalker','inview','popup_img','printA',];
+  for(i=0;i<Processlist.length;i++){
+    var script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.src = cssPath + Processlist[i] + '.js' ;
+    script.async = true; //
+    var head = document.getElementsByTagName('head')[0];
+    head.appendChild(script);
+  }
+  //<!---->
+  //<!-- ●読み込むアイコンファイルを指定する -->
+  var css = document.createElement('link');
+  css.rel = 'icon';
+  css.href = cssPath + 'UTicon.ico' ;
+  css.type = 'text/css';
+  var head = document.getElementsByTagName('head')[0];
+  head.appendChild(css);
+  //<!---->
+</script>
+<!---->
+<script type="text/javascript">
+  //<!--使用するファイルをロードするためのフォルダパスを作成する。-->
+  var cssPath = decodeURI(window.location.href).split('A_DWG_Lisp_List')[0] + 'A_DWG_Lisp_List/';
+  //<!---->
+  //<!--リンクするcssファイル名をリスト化して指定-->
+  var Processlist = ['LispDatabase_table_set',
+  ];
+  for(i=0;i<Processlist.length;i++){
+    var css = document.createElement('link');
+    css.type = 'text/css';
+    css.rel = 'stylesheet';
+    css.href = cssPath + Processlist[i] + '.css' ;
+    var head = document.getElementsByTagName('head')[0];
+    head.appendChild(css);
+  }
+  //<!---->
+  //<!--リンクするjsファイル名をリスト化して指定-->
+  //<!--データベースを読み込んでから、データベースを操作するjcを読み込む-->
+  var Processlist = ['Load_LispDatabase','LispDatabase_table_set',];
+  for(i=0;i<Processlist.length;i++){
+    var script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.src = cssPath + Processlist[i] + '.js' ;
+    script.async = true; //
+    var head = document.getElementsByTagName('head')[0];
+    head.appendChild(script);
+  }
+  //<!---->
+  //<!---->
+</script>
+<!---->
+<!--jsをページロード後に適応させます-->
+<!--変数の書き換えなど-->
+<script>
+  window.addEventListener('load', () => {
+    //<!---->
+    //<!--使用するファイルをロードするためのフォルダパスを作成する。-->
+    var cssPath = decodeURI(window.location.href).split('UtHelpHome')[0] + 'UtHelpHome/css/';
+    //<!---->
+    //<!--body内にある指定のclass名がついているものを配列としてリスト化し、-->
+    //<!--altタグにファイル名のみが指定されているので、cssフォルダパスと結合してsrcを書き換える-->
+    var elements = document.getElementsByClassName('img_Item');
+    for(i=0;i<elements.length;i++){
+      elements[i].src = cssPath + elements[i].alt;
+    }
+    //<!---->
+    //<!--その他、変数文字列更新-->
+    //<!--HTMLファイル名のフルパスを取得して、パスと拡張子を除いた文字列を変数に格納する-->
+    var str = decodeURI(window.location.href.split('/').pop().split('.').shift());
+    var elements = document.getElementsByClassName('InText_FileName');
+    for(i=0;i<elements.length;i++){
+      elements[i].innerText = str;
+    }
+  })
+</script>
+<!---->
+<!---->
+<!---->
+<!---->
+<!---->
+<script type="text/javascript">
+  // ビジーwaitを使う方法
+  function sleep(waitMsec) {
+  var startMsec = new Date();
+  // 指定ミリ秒間だけループさせる（CPUは常にビジー状態）
+  while (new Date() - startMsec < waitMsec);
+  }
+  sleep(1000);
+  //メッセージを表示
+  console.log('sleep終了！');
+</script>
+<!---->
+<!-- ●タイトルを指定する(ページのタブに表示される文字列) -->
+<title class="InText_FileName"></title><!--タイトルはjsで書き換えている-->
+<!---->
+</head>
+<!---->
+<body>
+<!---->
+<header id="header" style="user-select: none;"></header>
+<div class="class="scroll_bar""></div>
+<!--■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■-->
+<!--■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■-->
+<!---->
+<div style="user-select: none;">
+  <br>
+</div>
+<!---->
+<br><br>
+<!---->
+<div id="HelpTopics-var">
+  <div class="inview_Item delaydisplay_parent Slidefrom_left dtdd_style_a" style="">
+    <dt class="">
+      <a class="MS_idleX" href="">DWGのLispコマンド一覧</a>
+    </dt>
+    <dd class="inview_Item delaydisplay_child Slidefrom_up">
+          DwgCadで使用できるLispコマンドの一覧を表示します。
+          <br>各コマンドの更新内容は、専用ページで確認出来ます。
+      <!--<br>各コマンドの詳細な情報は、専用ページで確認してください。-->
+    </dd>
+  </div>
+</div>
+<!---->
+<br><br>
+<!---->
+<!---->
+<!---->
+<div class="database-table-option MS_idleX" style="">
+  <!---->
+  <!---->
+  <div class="" style="display: flex;">
+    <div class="">
+      <div>
+          <input type="checkbox" id="filter-type1" data-prefix="基" checked>
+          <label for="filter-type1">基本コマンド</label>
+      </div>
+      <div>
+          <input type="checkbox" id="filter-type2" data-prefix="D" checked>
+          <label for="filter-type2">DCLコマンド</label>
+      </div>
+      <div>
+          <input type="checkbox" id="filter-type3" data-prefix="内">
+          <label for="filter-type3">内部関数コマンド</label>
+      </div>
+      <div>
+          <input type="checkbox" id="filter-type4" data-prefix="他連">
+          <label for="filter-type4">他アプリ連携コマンド</label>
+      </div>
+    </div>
+    <div class="">
+      <div style="display: flex;">
+          <label for="filter-tool-name" style="width: 250px; text-align: right;">コマンド名称フィルタ：</label>
+          <div class="filter-container">
+              <input type="text" id="filter-tool-name">
+              <button class="clear-button" id="clear-tool-name">×</button>
+          </div>
+      </div>
+      <div style="display: flex;">
+          <label for="filter-tool-name" style="width: 250px; text-align: right;">簡易説明フィルタ：</label>
+          <div class="filter-container">
+              <input type="text" id="filter-description">
+              <button class="clear-button" id="clear-description">×</button>
+          </div>
+      </div>
+      <div style="display: flex;">
+          <label style="width: 250px; text-align: right;">該当コマンド数：</label>
+          <div id="command-count">
+          </div>
+      </div>
+    </div>
+  </div>
+<!---->
+<!---->
+<div class="print-page"><div class="area">
+  <table id="database-table" class="">
+    <thead>
+      <tr>
+          <th data-name="DataID" data-name_JaTXT="管理番号">管理番号</th>
+          <th data-name="CommandName" data-name_JaTXT="コマンド名称">コマンド名称</th>
+          <th data-name="LastUpdateDate" data-name_JaTXT="最終更新日">最終更新日</th>
+          <th data-name="Description" data-name_JaTXT="簡易説明">簡易説明</th>
+      </tr>
+    </thead>
+    
+    <tbody id="LispDatabase">
+    <!---->
+    <!--■データベースはWPSにて作成したjsを読み込んで表示される。■-->
+    <!---->
+    </tbody>
+    <!---->
+    <!---->
+    <!---->
+  </table>
+  <div><br>　※管理の都合上、欠番となっている個所も有ります。</div>
+  <div class="print-btn" style="font-size: 30px;">表を印刷</div>
+</div></div>
+</div>
+<!---->
+<div style="user-select: none;">
+  <br><br><br><br><br><br><br><br><br><br>
+</div>
+
+
+
+<!---->
+<!--■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■-->
+<!--■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■-->
+<footer id="footer" ></footer>
+<!---->
+</body>
+<!---->
+</html>

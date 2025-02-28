@@ -1,0 +1,110 @@
+/**/
+/**/
+/* フィルタ設定用のテキストボックスのスタイル */
+input[type="text"] {
+    margin-bottom: 10px;
+    padding: 5px;
+    width: 200px;
+    box-sizing: border-box; /* ボックスサイズを要素全体に適用 */
+}
+
+/* テーブルのスタイル */
+/* テーブル全体の幅を90%に設定 */
+#database-table {
+  font-family: 'Zen Maru Gothic', serif;/**/
+  font-weight: 500;/**/
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#database-table a {
+  text-decoration: none; /* リンクの下線を非表示にする */
+  color: inherit; /* 親要素からの色を継承する(るん区要素特有の色にならないようにする)*/
+}
+#database-table a:visited {
+  color: inherit; /* 親要素からの色を継承する(るん区要素特有の色にならないようにする)*/
+}
+
+
+/* "管理番号"の列の幅を設定 */
+#database-table th[data-name="DataID"],
+#database-table td:nth-child(1) {
+    width: 100px;
+}
+
+/* "ツール名称"の列の幅を設定 */
+#database-table th[data-name="CommandName"],
+#database-table td:nth-child(2) {
+    width: 200px;
+}
+
+#database-table td:nth-child(2) {
+  position: relative;
+  color: rgba(0, 0, 0, 1.0);
+}
+#database-table td:nth-child(2):hover {
+  font-weight: bold; /* 太字にする */
+  color: rgba(0, 0, 255, 1.0);
+  background-color: rgba(255, 255, 0, 0.5);
+  transform: translate(-1px, -1px);/**/
+  transition: all 0.3s ease-out 0.0s;
+}
+#database-table td:nth-child(2)::after {
+  content: ''; /* 疑似要素の内容を空にする */
+  position: absolute; /* 絶対位置指定 */
+  left: 0; /* 左端に配置 */
+  bottom: 3px; /* 下端に配置 */
+  height: 3px; /* 下線の高さを設定 */
+  background-color: red; /* 下線の色を設定 */
+  width: 0; /* 幅を0に設定し、初期状態では非表示にする */
+  transition: width 0.5s ease-in-out; /* 幅の変化をアニメーション化 */
+}
+
+#database-table td:nth-child(2):hover::after {
+  width: 100%; /* ホバー時に下線を全体に表示 */
+}
+
+/* "最終更新日"の列の幅をに設定 */
+#database-table th[data-name="LastUpdateDate"],
+#database-table td:nth-child(3) {
+    width: 110px;
+}
+
+/* 残りの幅を"簡易説明"の列に割り当て */
+#database-table th[data-name="Description"],
+#database-table td:nth-child(4) {
+    /* ここに幅の指定をしないことで、残りの幅が自動的に割り当てられる */
+}
+/**/
+/**/
+#database-table th, #database-table td {
+    border: 2px solid rgba(100, 100, 100, 0.9);
+    padding: 8px;
+    text-align: left;
+}
+
+#database-table th {
+    background-color: rgba(200, 200, 255, 0.3);
+}
+
+#database-table tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.7);
+}
+#database-table tr:nth-child(odd) {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+/**/
+/**/
+.database-table-option {
+  user-select: none; /* ドラッグして選択できないように設定 */
+  border: 3px ridge rgba(255, 255, 255, 0.8);
+  font-family: 'Zen Maru Gothic', serif;/**/
+  font-weight: 500;/**/
+  width: 90%;
+  margin: 0px 20px auto;/*上下と左右にmargin指定*/
+}
+/**/
+/**/
+/**/
+/**/
+/**/

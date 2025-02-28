@@ -1,0 +1,151 @@
+<!DOCTYPE html><!---->
+<html lang="ja">
+<head><meta charset="UTF-8">
+<!-- 指定秒数ごとにページを自動更新する。開発終了後はコメントアウトする。 -->
+<!--<meta http-equiv="refresh" content="5">-->
+<!---->
+<!--おまじない-->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<!---->
+<!---->
+<script type="text/javascript">
+//<!--使用するファイルをロードするためのフォルダパスを作成する。-->
+var cssPath = decodeURI(window.location.href).split('UtHelpHome')[0] + 'UtHelpHome/css/';
+  //<!---->
+  //<!--リンクするcssファイル名をリスト化して指定-->
+  var Processlist = ['header_footer_set','mouse_stalker',
+  'scroll_bar','font_set','dt_dd_set',
+  'popup_img','inview_Slidefrom_set',
+  'hover_box-shadow' , 'printA',
+  ];
+  for(i=0;i<Processlist.length;i++){
+    var css = document.createElement('link');
+    css.type = 'text/css';
+    css.rel = 'stylesheet';
+    css.href = cssPath + Processlist[i] + '.css' ;
+    var head = document.getElementsByTagName('head')[0];
+    head.appendChild(css);
+  }
+  //<!---->
+  //<!--リンクするjsファイル名をリスト化して指定-->
+  var Processlist = ['header_footer_set','mouse_stalker','inview','popup_img','printA',];
+  for(i=0;i<Processlist.length;i++){
+    var script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.src = cssPath + Processlist[i] + '.js' ;
+    script.async = true; //
+    var head = document.getElementsByTagName('head')[0];
+    head.appendChild(script);
+  }
+  //<!---->
+  //<!-- ●読み込むアイコンファイルを指定する -->
+  var css = document.createElement('link');
+  css.rel = 'icon';
+  css.href = cssPath + 'UTicon.ico' ;
+  css.type = 'text/css';
+  var head = document.getElementsByTagName('head')[0];
+  head.appendChild(css);
+  //<!---->
+</script>
+<!---->
+<!---->
+<script type="text/javascript">
+  //<!--使用するファイルをロードするためのフォルダパスを作成する。-->
+  var cssPath = decodeURI(window.location.href).split('UtHelpHome')[0] + 'UtHelpHome/';
+  //<!---->
+  //<!--リンクするcssファイル名をリスト化して指定-->
+  var Processlist = ['',
+  ];
+  for(i=0;i<Processlist.length;i++){
+    var css = document.createElement('link');
+    css.type = 'text/css';
+    css.rel = 'stylesheet';
+    css.href = cssPath + Processlist[i] + '.css' ;
+    var head = document.getElementsByTagName('head')[0];
+    head.appendChild(css);
+  }
+  //<!---->
+  //<!--リンクするjsファイル名をリスト化して指定-->
+  //<!--データベースを読み込んでから、データベースを操作するjcを読み込む-->
+  var Processlist = ['Load_HelpDatabase'];
+  for(i=0;i<Processlist.length;i++){
+    var script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.src = cssPath + Processlist[i] + '.js' ;
+    script.async = true; //
+    var head = document.getElementsByTagName('head')[0];
+    head.appendChild(script);
+  }
+  //<!---->
+  //<!---->
+</script>
+<!---->
+<!---->
+<!--jsをページロード後に適応させます-->
+<!--変数の書き換えなど-->
+<script>
+  window.addEventListener('load', () => {
+    //<!---->
+    ///<!--使用するファイルをロードするためのフォルダパスを作成する。-->
+    var cssPath = decodeURI(window.location.href).split('UtHelpHome')[0] + 'UtHelpHome/css/';
+    //<!---->
+    //<!--body内にある指定のclass名がついているものを配列としてリスト化し、-->
+    //<!--altタグにファイル名のみが指定されているので、cssフォルダパスと結合してsrcを書き換える-->
+    var elements = document.getElementsByClassName('img_Item');
+    for(i=0;i<elements.length;i++){
+      elements[i].src = cssPath + elements[i].alt;
+    }
+    //<!---->
+    //<!--その他、変数文字列更新-->
+    //<!--HTMLファイル名のフルパスを取得して、パスと拡張子を除いた文字列を変数に格納する-->
+    var str = decodeURI(window.location.href.split('/').pop().split('.').shift());
+    var elements = document.getElementsByClassName('InText_FileName');
+    for(i=0;i<elements.length;i++){
+      elements[i].innerText = str;
+    }
+  })
+</script>
+<!---->
+<!---->
+<!---->
+<script type="text/javascript">
+  // ビジーwaitを使う方法
+  function sleep(waitMsec) {
+  var startMsec = new Date();
+  // 指定ミリ秒間だけループさせる（CPUは常にビジー状態）
+  while (new Date() - startMsec < waitMsec);
+  }
+  sleep(1000);
+  //メッセージを表示
+  console.log('sleep終了！');
+</script>
+<!---->
+<!-- ●タイトルを指定する(ページのタブに表示される文字列) -->
+<title class="InText_FileName"></title><!--タイトルはjsで書き換えている-->
+<!---->
+</head>
+<!---->
+<body>
+<!---->
+<header id="header" style="user-select: none;"></header>
+<div class="class="scroll_bar""></div>
+<!--■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■-->
+<!--■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■-->
+<!---->
+
+
+
+<div id="HelpDatabase">
+  <!---->
+  <!--■データベースはWPSにて作成したjsを読み込んで表示される。■-->
+  <!---->
+</div>
+
+<br><br><br><br><br><br><br><br><br><br>
+  <!--■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■-->
+<!--■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■-->
+<footer id="footer" ></footer>
+<!---->
+</body>
+<!---->
+</html>

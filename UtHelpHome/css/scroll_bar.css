@@ -1,0 +1,44 @@
+/**/
+html {
+  scroll-behavior: smooth;
+}
+/* スクロールバー幅指定 */
+body::-webkit-scrollbar {
+    width: auto;
+    overflow-x: hidden;
+    /*border-radius: 20px;*//*widthをautoにしたいのでバーを丸めるのはやめた*/
+  }
+/**/
+/* スクロールバー軌道 */
+body::-webkit-scrollbar-track {
+    /*box-shadow: 左右の向きpx  上下の向きpx ぼかしpx 広がりpx 色 内側指定;*/
+    box-shadow:0px 0px 5px 8px rgba(5, 5, 5, 0.8) inset ;
+    border: 5px groove rgba(5, 5, 5, 0.8);
+    }
+/**/
+/* スクロールバー軌道のホバー */
+body::-webkit-scrollbar-track:hover {
+    background: rgba(10, 10, 10, 0.5);
+  }
+/**/
+/* バーの部分(縦) */
+body::-webkit-scrollbar-thumb {
+  box-shadow:0px 0px 5px 8px rgba(255, 255, 255, 0.3) inset ;
+  border: 7px ridge rgba(200, 200, 200, 0.8);
+  }
+    /**/
+    /* バーの部分(縦)のホバー */
+body::-webkit-scrollbar-thumb:hover {
+      background: rgba(255, 255, 255, 0.5);
+      border: 5px outset rgba(200, 200, 200, 0.8);
+      /*border-radius: 200%;*/
+}
+/**/
+/* バーの部分(横)非表示になってるはずだけどここでも処理しとく */
+body::-webkit-scrollbar-thumb:horizontal {
+    background: transparent; }
+/**/
+/* 軌道のコーナー */
+body::-webkit-scrollbar-corner {
+    background: transparent; }
+/**/
