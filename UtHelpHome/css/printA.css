@@ -1,0 +1,37 @@
+
+
+.print-btn,
+.print-all {
+  margin: 20px auto;
+  padding: 10px;
+  color: #FFF;
+  font-size: 12px;
+  text-align: center;
+  background-color: #666;
+  border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+  cursor: pointer;
+}
+
+.print-btn {
+  width: 60%;
+}
+.print-all {
+  width: 50%;
+}
+.print-off {
+  display: none;
+}
+
+/*プリント用CSS*/
+@media print {
+  #header {display:none;}
+　#footer {display:none;}
+  .area {
+    width: 100%;
+  }
+  .print-btn,.print-all {
+    display: none;
+  }
+}

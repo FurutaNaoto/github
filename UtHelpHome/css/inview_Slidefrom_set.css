@@ -1,0 +1,136 @@
+/**/
+/**/
+.inview_Item {
+  /*標準ではマウスイベントを無効にする*/
+  pointer-events:none;
+}
+.inview_Item.inview {
+  /*要素が監視範囲にある場合にはマウスイベントを有効にする*/
+  pointer-events:auto;
+}
+/**/
+/* アニメーション前のスタイル */
+.Slidefrom_left {
+  opacity: 0;
+  transform: translate(0px, 0px);/**/
+  transition: all 0.2s ease-out 0.0s; /*消えるときは素早く消す*/
+}
+/* アニメーション発火時 */
+.Slidefrom_left.inview {
+  opacity: 1;
+  animation: Slidefrom_left 0.5s ease-out 0.0s;
+}
+/**/
+@keyframes Slidefrom_left  {
+  0% {
+    opacity: 0.0;
+    transform: translate(-100px, 0px) scale(1.0);/**/
+  }
+  100% {
+    opacity: 1.0;
+    transform: translate(0px, 0px) scale(1.0);/**/
+  }
+}
+/**/
+/**/
+/*右はなんかキモイ*/
+/* アニメーション前のスタイル */
+.Slidefrom_right {
+  opacity: 0;
+  transform: translate(0px, 0px);
+  transition: all 0.2s ease-out 0.0s; /*消えるときは素早く消す*/
+}
+/* アニメーション発火時 */
+.Slidefrom_right.inview {
+  opacity: 1;
+  animation: Slidefrom_right 0.5s ease-out 0.0s;
+}
+/**/
+@keyframes Slidefrom_right {
+  0% {
+    opacity: 0.0;
+    transform: translate(100px, 0px) scale(1.0);
+  }
+  100% {
+    opacity: 1.0;
+    transform: translate(0px, 0px) scale(1.0);
+  }
+}
+/**/
+/**/
+/**/
+/* アニメーション前のスタイル */
+.Slidefrom_up {
+  opacity: 0;
+  transform: translate(0px, 0px);
+  transition: all 0.2s ease-out 0.0s; /*消えるときは素早く消す*/
+}
+/* アニメーション発火時 */
+.Slidefrom_up.inview {
+  opacity: 1;
+  animation: Slidefrom_up 0.5s ease-out 0.0s;
+}
+/**/
+@keyframes Slidefrom_up {
+  0% {
+    opacity: 0.0;
+    transform: translate(0px, -100px) scale(1.0);
+  }
+  100% {
+    opacity: 1.0;
+    transform: translate(0px, 0px) scale(1.0);
+  }
+}
+/**/
+/**/
+/**/
+/* アニメーション前のスタイル */
+.Slidefrom_down {
+  opacity: 0;
+  transform: translate(0px, 0px);
+  transition: all 0.2s ease-out 0.0s; /*消えるときは素早く消す*/
+}
+/* アニメーション発火時 */
+.Slidefrom_down.inview {
+  opacity: 1;
+  animation: Slidefrom_down 0.5s ease-out 0.0s;
+}
+/**/
+@keyframes Slidefrom_down {
+  0% {
+    opacity: 0.0;
+    transform: translate(0px, 100px) scale(1.0);
+  }
+  100% {
+    opacity: 1.0;
+    transform: translate(0px, 0px) scale(1.0);
+  }
+}
+/**/
+/**/
+/**/
+/*親要素が表示されてから子要素をディレイを付けて表示する記述*/
+.delaydisplay_parent .delaydisplay_child {
+  visibility: hidden;
+  transform: translate(-300%, 0px);
+  transition: all 0.0s ease-out 0.5s; /*0.5sのディレイを付けてある*/
+}
+
+.delaydisplay_parent.inview .delaydisplay_child {
+  visibility: visible;
+  transform: translate(0px, 0px);
+}
+/**/
+/* ↓こんな感じで書けばいい
+<div class="inview_Item Slidefrom_left delaydisplay_parent">
+  左からスライドイン
+  <div class="delaydisplay_child Slidefrom_up" style="">
+    上からスライドイン
+  </div>
+</div>
+*/
+/**/
+/**/
+/**/
+/**/
+/**/

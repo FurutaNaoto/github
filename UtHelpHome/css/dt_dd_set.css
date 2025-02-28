@@ -1,0 +1,221 @@
+/**/
+/**/
+/*dtdd_style_aとdtdd_style_a1はほぼ同じスタイルなので一緒に設定する*/
+.dtdd_style_a ,
+.dtdd_style_a1 {
+  pointer-events:auto;/*マウスイベントを有効にする*/
+  user-select: none; /*テキストの選択、ドラックハイライトを不可能にする*/
+  position: relative;
+  width: auto;
+  display: block;/**/
+  padding: 5px 10px;/**/
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 10px 5px 10px 2px rgba(0, 0, 0, 0.2);
+  /**/
+  border-top: 3px ridge rgba(255, 255, 255, 0.8);
+  border-right: 2px groove rgba(255, 255, 255, 0.8);
+  border-bottom: 2px groove rgba(255, 255, 255, 0.8);
+  border-left: 5px ridge rgba(255, 255, 255, 0.8);
+  /**/
+  transition: all 0.3s ease-out 0.0s;
+  /**/
+  font-family: 'Zen Maru Gothic', serif;/**/
+  font-weight: 500;/**/
+  /**/
+  color: rgba(0, 0, 0, 1.0); /*文字の色*/
+  /**/
+}
+.dtdd_style_a:hover ,
+.dtdd_style_a1:hover {
+  transform: translate(-1px, -1px);/**/
+  box-shadow:
+    0px 0px 10px rgba(0, 110, 255, 1),
+    10px 10px 10px rgba(0, 00, 00, 0.3);
+}
+.dtdd_style_a dt ,
+.dtdd_style_a1 dt {
+  margin: 0em 0em; /* 上下、左右にマージンを設定 */
+  padding: 0px 10px;/*ボーダーの少し右から文字を始める*/
+  border-bottom: 2px solid rgba(50, 50, 50, 0.5); /*ボーダーの色*/
+  font-size: 20px;
+  color: inherit; /* 親要素から継承した色を使用 */
+  text-stroke: 2px rgba(200, 200, 200, 0.2); /*文字の輪郭線の色と幅(ブラウザ対応1)*/
+  -webkit-text-stroke: 1px rgba(200, 200, 200, 0.2); /*文字の輪郭線の色と幅(ブラウザ対応2)*/
+}
+.dtdd_style_a dd,
+.dtdd_style_a1 dd {
+  display: inline-block;
+  margin: 0em 0.6em; /* 上下、左右にマージンを設定 */
+  padding: 3px 0px 3px 0px;/*上右下左の値を設定します*/
+  font-size: 15px;
+  color: inherit; /* 親要素から継承した色を使用 */
+  text-stroke: 2px rgba(200, 200, 200, 0.2); /*文字の輪郭線の色と幅(ブラウザ対応1)*/
+  -webkit-text-stroke: 1px rgba(200, 200, 200, 0.2); /*文字の輪郭線の色と幅(ブラウザ対応2)*/
+}
+.dtdd_style_a a,
+.dtdd_style_a1 a {
+  color: inherit; /* 親要素から継承した色を使用 */
+  text-stroke: 2px rgba(200, 200, 200, 0.2); /*文字の輪郭線の色と幅(ブラウザ対応1)*/
+  -webkit-text-stroke: 1px rgba(200, 200, 200, 0.2); /*文字の輪郭線の色と幅(ブラウザ対応2)*/
+  text-decoration: none; /* 下線を削除 */
+}
+/**/
+/**/
+/*dtdd_style_a1に対してaとの相違点を記述する*/
+.dtdd_style_a1 {
+  display: flex;
+}
+.dtdd_style_a1 dt {
+  display: flex;
+  justify-content: center; /* 水平方向の中央揃え */
+  align-items: center; /* 垂直方向の中央揃え */
+  padding: 0px 5px 0px 0px;/*右だけ値を指定する*/
+  /**/
+  border-bottom: none;
+  border-right: 2px solid rgba(50, 50, 50, 0.5); /*ボーダーの色*/
+  width: 1.5em;/*1文字を表示するdtと2文字を表示するdtが並んだ時にきれいに見えるように値を指定しておく*/
+}
+.dtdd_style_a1 dd {
+  /*特になし*/
+}
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+.link_popmsg {
+  position: relative;
+  pointer-events: visiblePainted;
+}
+
+.link_popmsg::before,
+.link_popmsg::after {
+  display: flex;
+  opacity: 0;
+  height: 20px;
+  font-size: 15px;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  bottom: 100%;
+  left: 0%;
+  padding: 5px 10px;
+}
+/**/
+.link_popmsg::before {
+  z-index: 1;
+  content: "詳しく見る";
+  width: 150px;
+  background-color: rgba(255, 255, 255, 1.0);
+  border-top: 3px ridge rgba(255, 255, 255, 0.8);
+  border-right: 2px groove rgba(255, 255, 255, 0.8);
+  border-bottom: 2px groove rgba(255, 255, 255, 0.8);
+  border-left: 5px ridge rgba(255, 255, 255, 0.8);
+  transform: translate(0%, 100%);
+  transition: all 0.4s ease-in-out 0s;
+}
+/**/
+.link_popmsg::after {
+  z-index: 2;
+  content: ">"; /*ChatGPTさんへ、この行を追加しました*/
+  width: 5px;
+  background-color: rgba(0, 0, 0, 1.0);
+  border-top: 3px ridge rgba(255, 255, 255, 1.0);
+  border-right: 2px groove rgba(255, 255, 255, 1.0);
+  border-bottom: 2px groove rgba(255, 255, 255, 1.0);
+  border-left: 5px ridge rgba(255, 255, 255, 1.0);
+}
+/**/
+.link_popmsg:hover::before {
+  opacity: 1;
+  transform: translate(10px, 10px);
+  animation: link_popmsg_before 1.2s ease-in-out 0.0s;
+  transition-delay: 0.3s;
+}
+/**/
+.link_popmsg:hover::after {
+  opacity: 1;
+  transform: translate(155px, 10px);
+  color: rgba(255, 255, 255, 1.0);
+  animation: link_popmsg_after 1.2s ease-in-out 0.0s;
+  transition-delay: 0.3s;
+}
+/**/
+@keyframes link_popmsg_before {
+  0% {
+    opacity: 0.0;
+    transform: translate(0%, 100%);
+    color: rgba(255, 255, 255, 0.0);
+  }
+  40% {
+    opacity: 1.0;
+    transform: translate(10px, 10px);
+    color: rgba(255, 255, 255, 0.0);
+    font-size: 1px;
+  }
+  70% {
+    opacity: 1.0;
+    color: rgba(255, 255, 255, 1.0);
+    font-size: 1px;
+  }
+  100% {
+    opacity: 1.0;
+    color: rgba(0, 0, 0, 1.0);
+    font-size: 15px;
+  }
+}
+/**/
+@keyframes link_popmsg_after {
+  0% {
+    opacity: 0.0;
+    transform: translate(0%, 100%);
+    color: rgba(255, 255, 255, 0.0);
+  }
+  30% {
+    opacity: 0.0;
+    transform: translate(10px, 10px);
+    color: rgba(255, 255, 255, 0.0);
+  }
+  50% {
+    opacity: 1.0;
+    transform: translate(10px, 10px);
+    color: rgba(255, 255, 255, 0.0);
+  }
+  70% {
+    opacity: 1.0;
+    transform: translate(10px, 10px);
+    color: rgba(255, 255, 255, 1.0);
+  }
+  100% {
+    opacity: 1.0;
+    transform: translate(155px, 10px);
+    color: rgba(255, 255, 255, 1.0);
+  }
+}
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
